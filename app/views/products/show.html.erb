@@ -1,7 +1,7 @@
 <h1><%= @product.name %></h1>
 <%= link_to "Back",products_path %>
 <br>
-<%= image_tag(@product.url) %>
+<%= image_tag(@product.url) %> | Price: <%= @product.price %> | Description: <%= @product.description %>
 <br>
 <%= link_to "Add Review",new_product_review_path(@product) %>
 <% @reviews.each do |review| %>
