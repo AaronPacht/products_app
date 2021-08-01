@@ -13,9 +13,24 @@ class ReviewsController < ApplicationController
         @review=Review.new(review_params)
         @review.product=@product
         if @review.save
-            redirect_to product_review_url(@review,@review)
+            redirect_to product_review_url(@product,@review)
         else
             render :new
+        end
+    end
+
+    def edit
+        @product=Product.find(params[:product_id])
+        @review=Review.find(params[:id])
+    end
+
+    def update
+        @product=Product.find(params[:product_id])
+        @review=Review.find(params[:id])
+        if @review.update(review_params)
+            redirect_to product_url(params[:product_id])
+        else
+            render :edit
         end
     end
 
