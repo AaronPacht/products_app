@@ -2,6 +2,8 @@
 <%= link_to "Back",products_path %>
 <br>
 <%= image_tag(@product.url) %>
+<br>
+<%= link_to "Add Review",new_product_review_path(@product) %>
 <% @reviews.each do |review| %>
     <li><%= review.user %> gave this product <%= review.stars %> stars
     <p><%= review.message %></p>
