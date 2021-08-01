@@ -1,0 +1,10 @@
+<h1>Add Product</h1>
+<%= link_to "Back",products_path %>
+<% if !@product.errors.messages.empty? %>
+    <br>
+    <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <%  end %>
+    <br>
+<% end %>
+<%= render partial: "product_form", locals:{product: @product}%>

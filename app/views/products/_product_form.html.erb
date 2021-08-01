@@ -1,0 +1,19 @@
+<%= form_for product do |f| %>
+    <div>
+        <%= f.label :product_name %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :product_price %>
+        <%= f.number_field :price %>
+    </div>
+    <div>
+        <%= f.label :product_description %>
+        <%= f.text_area :description %>
+    </div>
+    <div>
+        <%= f.label :product_image_url %>
+        <%= f.text_field :url %>
+    </div>
+    <%= f.submit %>
+<% end %>
