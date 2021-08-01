@@ -2,5 +2,5 @@
 <%= link_to "Add Product",new_product_path %>
 <%@products.each do |product| %>
     <li><%= image_tag(product.url)%> <%=product.name%> | Price: <%=product.price%> | Description: <%= product.description %>
-    <p><%=link_to "View Product",product_path(product)%> | <%= link_to "Edit Product",edit_product_path(product) %></p></li>
+    <p><%=link_to "View Product",product_path(product)%> | <%= link_to "Edit Product",edit_product_path(product) %> | <%= link_to "Delete Product",product_path(product),method: :delete, data: {confirm:"Are you sure you want to delete this product?"} %></p></li>
 <% end %>

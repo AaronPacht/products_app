@@ -34,6 +34,12 @@ class ProductsController < ApplicationController
         end
     end
 
+    def destroy
+        @product=Product.find(params[:id])
+        @product.destroy
+        redirect_to products_url
+    end
+
     private
     def product_params
         params.require(:product).permit(:name,:price,:description,:url)
