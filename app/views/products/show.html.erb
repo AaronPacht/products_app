@@ -4,5 +4,6 @@
 <%= image_tag(@product.url) %>
 <% @reviews.each do |review| %>
     <li><%= review.user %> gave this product <%= review.stars %> stars
-    <p><%= review.message %></p></li>
+    <p><%= review.message %></p>
+    <p><%= link_to "View Review",product_review_path(review,review) %></p></li>
 <% end %>
