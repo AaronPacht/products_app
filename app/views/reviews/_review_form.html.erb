@@ -1,14 +1,14 @@
 <%= form_for [product,review] do |f| %>
-    <div>
-        <%= f.label :user_name %>
+    <div class="form">
+        <%= f.label :user_name %><br>
         <%= f.text_field :user %>
     </div>
-    <div>
-        <%= f.label :stars %>
+    <div class="form">
+        <%= f.label :stars %><br>
         <%= f.number_field :stars %>
     </div>
-    <div>
-        <%= f.label :review %>
+    <div class="form">
+        <%= f.label :review %><br>
         <%= f.text_area :message %>
     </div>
     <%= f.submit %>

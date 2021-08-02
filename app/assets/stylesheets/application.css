@@ -13,3 +13,119 @@
  *= require_tree .
  *= require_self
  */
+*{
+    background-color: rgb(214, 255, 255);
+}
+
+li{
+    list-style: none;
+}
+
+.content>img{
+    max-width: 250px;
+    max-height: 250px;
+    margin: 5px;
+}
+
+.listing{
+    border: 1px solid gray;
+    margin: 5px;
+}
+
+h1{
+    font-size: 300%;
+    margin-left: 5px;
+}
+
+a{
+    background-color: gray;
+    text-decoration: none;
+    color: rgb(214, 255, 255);
+    margin: 5px;
+    padding: 10px;
+}
+
+a:hover{
+    background-color: rgb(214, 255, 255);
+    color: gray;
+}
+
+.content,.item{
+    font-size: 200%;
+    font-weight: bold;
+    display: flex;
+}
+
+.form{
+    font-size: 200%;
+    padding: 15px;
+}
+
+.form>input{
+    font-size: 90%;
+    height: 30px;
+}
+
+.form>textarea{
+    box-sizing: border-box;
+    height: 150px;
+    width: 351px;
+    font-size: 90%;
+    border: 2px solid black;
+}
+
+form>input{
+    background-color: gray;
+    color: rgb(214, 255, 255);
+    margin: 5px;
+    padding: 10px;
+    border: none;
+}
+
+form>input:hover{
+    background-color: rgb(214, 255, 255);
+    color: gray;
+}
+
+.error{
+    font-size: 200%;
+    margin: 0 15px;
+    color: red;
+}
+
+.field_with_errors input[type="text"],
+.field_with_errors input[type="number"]{
+    font-size: 90%;
+    height: 30px;
+}
+
+.item{
+    margin: 5px;
+    border: 1px solid gray;
+    display: flex;
+}
+
+.item>img{
+    margin: 5px;
+}
+
+.review{
+    margin: 5px;
+    border: 1px solid gray;
+    font-weight: bold;
+}
+
+.star{
+    color: blue;
+}
+
+.revtext{
+    margin: 5px;
+}
+
+.msg{
+    font-size: 200%;
+    border: 1px solid gray;
+    height: 725px;
+    padding: 10px;
+}

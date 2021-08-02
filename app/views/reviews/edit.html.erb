@@ -1,9 +1,9 @@
 <h1>Edit <%= @review.user %>'s review</h1>
-<%= link_to "Back",product_path(@product) %>
+<p><%= link_to "Back",product_path(@product) %></p>
 <% if !@review.errors.messages.empty? %>
     <br>
     <% @review.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li class="error"><%= msg %></li>
     <%  end %>
     <br>
 <% end %>

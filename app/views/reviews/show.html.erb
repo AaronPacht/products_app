@@ -1,4 +1,9 @@
-<h1><%= @review.user %>'s review</h1>
-<%= link_to "Back",product_path(@review.product_id) %>
-<p><%= @review.stars %> stars</p>
-<p><%= @review.message %></p>
+<h1><%= @review.user %>'s review
+<% @review.stars.times do %>
+    <span class="star">&#9733;</span>
+<% end %>
+<% (5-@review.stars).times do %>
+    <span>&#9734;</span>
+<% end %></h1>
+<p><%= link_to "Back",product_path(@review.product_id) %></p>
+<p class="msg"><%= @review.message %></p>
