@@ -81,8 +81,7 @@ form>input:hover{
     color: red;
 }
 
-.field_with_errors input[type="text"],
-.field_with_errors input[type="number"]{
+.field_with_errors input{
     font-size: 90%;
     height: 30px;
 }
@@ -116,4 +115,15 @@ form>input:hover{
     border: 1px solid gray;
     height: 725px;
     padding: 10px;
+}
+
+.account{
+    display: flex;
+    justify-content: space-between;
+}
+
+.notice{
+    background-color: lightgreen;
+    padding: 5px;
+    font-size: 200%;
 }

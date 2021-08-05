@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <div class=<%=type%>>
+        <%= msg %>
+      </div>
+    <%  end %>
+    <div class="account">
+      <p><%= link_to "Home", root_path %></p>
+      <%if current_user%>
+        <p><%= link_to "Logout", session_path, method: :delete  %></p>
+      <% else %>
+        <p><%= link_to "Sign up", new_users_path %> | 
+        <%= link_to "Login", new_session_path %></p>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
