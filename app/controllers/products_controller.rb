@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+    before_action :require_login, except: [:index]
+
     def index
         @products=Product.all
     end
@@ -6,6 +8,7 @@ class ProductsController < ApplicationController
     def show
         @product=Product.find(params[:id])
         @reviews=Review.where(product_id: params[:id])
+        @authors=User.all
     end
 
     def new
@@ -43,5 +46,12 @@ class ProductsController < ApplicationController
     private
     def product_params
         params.require(:product).permit(:name,:price,:description,:url)
+    end
+
+    def require_login
+        unless current_user
+            flash[:alert]="You must be logged in to preform this action!"
+            redirect_to new_session_url
+        end
     end
 end

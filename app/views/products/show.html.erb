@@ -6,7 +6,7 @@
 <p><%= link_to "Add Review",new_product_review_path(@product) %></p>
 <% @reviews.each do |review| %>
     <div class="review">
-        <li><span class="revtext"><%= review.user %> gave this product <%= review.stars %> stars</span>
+        <li><span class="revtext"><%= @authors.find(review.user_id).username %> gave this product <%= review.stars %> stars</span>
         <% review.stars.times do %>
             <span class="star">&#9733;</span>
         <% end %>
