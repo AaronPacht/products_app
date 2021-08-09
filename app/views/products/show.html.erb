@@ -15,7 +15,9 @@
         <% (5-review.stars).times do %>
             <span>&#9734;</span>
         <% end %>
-        <p class="revtext">"<%= review.message %>"</p>
+        <% unless review.message=="" %>
+            <p class="revtext">"<%= review.message %>"</p>
+        <% end %>
         <p><%= link_to "View Review",product_review_path(@product,review)%>
         <% if review.user_id==current_user.id %>
              | <%= link_to "Edit Review",edit_product_review_path(@product,review) %> | <%= link_to "Delete Review",product_review_path(@product,review), method: :delete, data: {confirm:"Are you sure you want to delete this review?"} %>

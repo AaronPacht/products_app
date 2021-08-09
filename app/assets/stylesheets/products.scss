@@ -48,6 +48,11 @@ label,input{
     display: block;
 }
 
+input[type="checkbox"]{
+    height: 30px;
+    width: 30px;
+}
+
 .form{
     font-size: 200%;
     padding: 15px;

@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
     before_action :require_login, except: [:index]
     before_action :require_ownership, only: [:edit,:update,:destroy]
+    before_action :require_seller, except: [:index,:show]
 
     def index
         @products=Product.all
@@ -60,6 +61,13 @@ class ProductsController < ApplicationController
         @product=Product.find(params[:id])
         unless @product.user_id==current_user.id
             flash[:alert]="You must be the owner of this product to perform this action"
+            redirect_to root_url
+        end
+    end
+
+    def require_seller
+        unless current_user.seller==true
+            flash[:alert]="You only have buyer access"
             redirect_to root_url
         end
     end
