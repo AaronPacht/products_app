@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
     before_action :require_ownership, only: [:edit,:update,:destroy]
+    before_action :require_not_ownership, only: [:new,:create]
     
     def show
         @review=Review.find(params[:id])
@@ -55,6 +56,14 @@ class ReviewsController < ApplicationController
         unless @review.user_id==current_user.id
             flash[:alert]="You must be the owner of this review to perform this action"
             redirect_to product_url(@review.product_id)
+        end
+    end
+
+    def require_not_ownership
+        @product=Product.find(params[:product_id])
+        if @product.user_id==current_user.id
+            flash[:alert]="You can not review your own product"
+            redirect_to product_url(@product)
         end
     end
 end

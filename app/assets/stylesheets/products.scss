@@ -44,6 +44,10 @@ a:hover{
     display: flex;
 }
 
+label,input{
+    display: block;
+}
+
 .form{
     font-size: 200%;
     padding: 15px;

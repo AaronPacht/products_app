@@ -1,10 +1,8 @@
 <h1>Edit <%= @review.user %>'s review</h1>
 <p><%= link_to "Back",product_path(@product) %></p>
 <% if !@review.errors.messages.empty? %>
-    <br>
     <% @review.errors.full_messages.each do |msg| %>
         <li class="error"><%= msg %></li>
     <%  end %>
-    <br>
 <% end %>
 <%= render partial: "review_form", locals:{product: @product,review: @review}%>

@@ -1,14 +1,14 @@
 <%= form_for user do |f| %>
     <div class="form">
-        <%= f.label :User_name %><br>
+        <%= f.label :User_name %>
         <%= f.text_field :username %>
     </div>
     <div class="form">
-        <%= f.label :User_password %><br>
+        <%= f.label :User_password %>
         <%= f.password_field :password %>
     </div>
     <div class="form">
-        <%= f.label :confirm_password %><br>
+        <%= f.label :confirm_password %>
         <%= f.password_field :password_confirmation %>
     </div>
     <%= f.submit "Sign Up"%>

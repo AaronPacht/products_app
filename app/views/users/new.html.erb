@@ -1,10 +1,8 @@
 <p><%= link_to "Back", root_path %></p>
 <h1>Sign up</h1>
 <% if !@user.errors.messages.empty? %>
-    <br>
     <% @user.errors.full_messages.each do |msg| %>
         <li class="error"><%= msg %></li>
     <%  end %>
-    <br>
 <% end %>
 <%= render partial: "user_form", locals:{ user: @user}%>

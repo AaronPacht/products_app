@@ -1,10 +1,10 @@
 <%= form_for [product,review] do |f| %>
     <div class="form">
-        <%= f.label :number_of_stars %><br>
+        <%= f.label :number_of_stars %>
         <%= f.number_field :stars %>
     </div>
     <div class="form">
-        <%= f.label :review %><br>
+        <%= f.label :review %>
         <%= f.text_area :message %>
     </div>
     <%= f.submit %>

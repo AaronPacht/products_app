@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
     before_action :require_login, except: [:index]
+    before_action :require_ownership, only: [:edit,:update,:destroy]
 
     def index
         @products=Product.all
@@ -7,8 +8,7 @@ class ProductsController < ApplicationController
 
     def show
         @product=Product.find(params[:id])
-        @reviews=Review.where(product_id: params[:id])
-        @authors=User.all
+        @reviews=@product.reviews
     end
 
     def new
@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
 
     def create
         @product=Product.new(product_params)
+        @product["user_id"]=current_user.id
         if @product.save
             redirect_to product_url(@product)
         else
@@ -52,6 +53,14 @@ class ProductsController < ApplicationController
         unless current_user
             flash[:alert]="You must be logged in to preform this action!"
             redirect_to new_session_url
+        end
+    end
+
+    def require_ownership
+        @product=Product.find(params[:id])
+        unless @product.user_id==current_user.id
+            flash[:alert]="You must be the owner of this product to perform this action"
+            redirect_to root_url
         end
     end
 end

@@ -1,18 +1,18 @@
 <%= form_for product do |f| %>
     <div class="form">
-        <%= f.label :product_name %><br>
+        <%= f.label :product_name %>
         <%= f.text_field :name %>
     </div>
     <div class="form">
-        <%= f.label :product_price %><br>
+        <%= f.label :product_price %>
         <%= f.number_field :price %>
     </div>
     <div class="form">
-        <%= f.label :product_description %><br>
+        <%= f.label :product_description %>
         <%= f.text_area :description %>
     </div>
     <div class="form">
-        <%= f.label :product_image_url %><br>
+        <%= f.label :product_image_url %>
         <%= f.text_area :url %>
     </div>
     <%= f.submit %>
