@@ -10,14 +10,32 @@ li{
 }
 
 .content>img{
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 200px;
+    max-height: 200px;
     margin: 5px;
+}
+
+.listingbox{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 225px);
+    grid-gap: 7px;
+    border: 1px solid gray;
+    justify-content: center;
 }
 
 .listing{
     border: 1px solid gray;
     margin: 5px;
+}
+
+.listinginfo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.listinginfo>a{
+    font-size: 75%;
+    text-align: center;
 }
 
 h1{
@@ -38,10 +56,15 @@ a:hover{
     color: gray;
 }
 
-.content,.item{
+.item{
     font-size: 200%;
     font-weight: bold;
     display: flex;
+}
+
+.content{
+    font-size: 100%;
+    font-weight: bold;
 }
 
 label,input{
