@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     before_action :require_seller, except: [:index,:show]
 
     def index
-        @products=Product.all
+        @products=Product.search(params[:search])
     end
 
     def show
