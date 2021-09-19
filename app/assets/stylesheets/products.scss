@@ -43,7 +43,7 @@ h1{
     margin-left: 5px;
 }
 
-a{
+a,button{
     background-color: gray;
     text-decoration: none;
     color: rgb(214, 255, 255);
@@ -51,7 +51,7 @@ a{
     padding: 10px;
 }
 
-a:hover{
+a:hover,button:hover{
     background-color: rgb(214, 255, 255);
     color: gray;
 }
